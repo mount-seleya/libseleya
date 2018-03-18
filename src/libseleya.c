@@ -6,6 +6,7 @@
 #include <GLFW/glfw3.h>
 
 #include "seleya/seleya.h"
+#include "seleya/window.h"
 #include "seleya/monitor.h"
 
 seleya_monitor_t *seleya_init(void)

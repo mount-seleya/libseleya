@@ -6,9 +6,12 @@ libseleya.so:
 	${CC} -c -fPIC ./src/libseleya.c -I./src/include ${LDFLAGS_libseleya}
 	${CC} -c -fPIC ./src/libseleya_monitor.c -I./src/include ${LDFLAGS_libseleya}
 	${CC} -c -fPIC ./src/libseleya_window.c -I./src/include ${LDFLAGS_libseleya}
+	${CC} -c -fPIC ./src/libseleya_vulkan.c -I./src/include ${LDFLAGS_libseleya}
 	${CC} -shared -fPIC -Wl,-soname,libseleya.so \
-		-o libseleya.so ./libseleya.o ./libseleya_monitor.o ./libseleya_window.o -lc \
-		${LDFLAGS_libseleya}
+		-o libseleya.so \
+		./libseleya.o ./libseleya_monitor.o ./libseleya_window.o \
+		./libseleya_vulkan.o \
+		-lc ${LDFLAGS_libseleya}
 
 seleya: libseleya.so
 	${CC} -c ./demo/seleya.c -I./demo/include -I./src/include -L./ -lseleya

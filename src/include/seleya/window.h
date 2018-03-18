@@ -6,13 +6,16 @@
 #endif
 #include <GLFW/glfw3.h>
 
+#include "seleya/seleya.h"
 #include "seleya/monitor.h"
+#include "seleya/vulkan.h"
 
-typedef struct {
+struct seleya_window_t {
   GLFWwindow *window;
   int w;
   int h;
-} seleya_window_t;
+  seleya_vulkan_t *vulkan;
+};
 
 seleya_window_t *seleya_window_create(int w, int h, char *title, seleya_monitor_t *m);
 void seleya_window_destroy(seleya_window_t *w);

@@ -9,6 +9,7 @@
 #include "seleya/seleya.h"
 #include "seleya/monitor.h"
 #include "seleya/window.h"
+#include "seleya/vulkan.h"
 
 seleya_window_t *seleya_window_create(int w, int h, char *title, seleya_monitor_t *m)
 {
@@ -27,6 +28,8 @@ seleya_window_t *seleya_window_create(int w, int h, char *title, seleya_monitor_
     window->window = glfwCreateWindow(w, h, title, m->monitor, NULL);
   else
     window->window = glfwCreateWindow(w, h, title, NULL, NULL);
+
+  window->vulkan = seleya_vulkan_init(window, title, SELEYA_ENGINE_NAME);
 
   return window;
 }

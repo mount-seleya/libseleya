@@ -6,8 +6,11 @@
 #endif
 #include <GLFW/glfw3.h>
 
+typedef struct seleya_window_t seleya_window_t;
+
 #include "seleya/monitor.h"
-#include "seleya/window.h"
+
+#define SELEYA_ENGINE_NAME "libseleya"
 
 seleya_monitor_t *seleya_init(void);
 void seleya_loop(seleya_window_t *w);
