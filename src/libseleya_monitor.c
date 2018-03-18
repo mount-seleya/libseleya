@@ -11,14 +11,25 @@
 
 seleya_monitor_t *seleya_monitor_new(GLFWmonitor *m)
 {
-  seleya_monitor_t *monitor;
+  seleya_monitor_t *monitor = NULL;
+  GLFWmonitor *primary = NULL;
+  const char *primary_name = NULL;
 
-  monitor = malloc(sizeof(seleya_monitor_t));
-  if(!monitor)
-    return NULL;
+  if(m)
+  {
+    monitor = malloc(sizeof(seleya_monitor_t));
+    if(!monitor)
+      return NULL;
 
-  memset(monitor, 0, sizeof(seleya_monitor_t));
-  monitor->name = glfwGetMonitorName(m);
+    memset(monitor, 0, sizeof(seleya_monitor_t));
+    monitor->name = glfwGetMonitorName(m);
+
+    primary = glfwGetPrimaryMonitor();
+    primary_name = glfwGetMonitorName(primary);
+
+    if(strcmp(monitor->name, primary_name) == 0)
+      monitor->primary = 1;
+  }
 
   return monitor;
 }

@@ -33,4 +33,6 @@ seleya_monitor_t *seleya_init(void)
         monitor = monitor_next;
     }
   }
+
+  return monitor;
 }
