@@ -1,4 +1,5 @@
-#include "seleya.h"
+#include "seleya/seleya.h"
+#include "seleya/monitor.h"
 
 int main(int argc, char *argv[])
 {
