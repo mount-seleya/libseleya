@@ -30,3 +30,9 @@ seleya_window_t *seleya_window_create(int w, int h, char *title, seleya_monitor_
 
   return window;
 }
+
+void seleya_window_destroy(seleya_window_t *w)
+{
+  glfwDestroyWindow(w->window);
+  free(w);
+}

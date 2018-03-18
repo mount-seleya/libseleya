@@ -15,5 +15,6 @@ typedef struct {
 } seleya_window_t;
 
 seleya_window_t *seleya_window_create(int w, int h, char *title, seleya_monitor_t *m);
+void seleya_window_destroy(seleya_window_t *w);
 
 #endif
