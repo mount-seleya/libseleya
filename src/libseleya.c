@@ -30,3 +30,11 @@ seleya_monitor_t *seleya_init(void)
 
   return monitor;
 }
+
+void seleya_loop(seleya_window_t *w)
+{
+  while(!glfwWindowShouldClose(w->window))
+  {
+    glfwPollEvents();
+  }
+}
