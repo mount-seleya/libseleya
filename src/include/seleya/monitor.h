@@ -6,7 +6,6 @@
 #endif
 #include <GLFW/glfw3.h>
 
-typedef struct seleya_monitor_t seleya_monitor_t;
 typedef struct seleya_monitor_mode_t seleya_monitor_mode_t;
 
 struct seleya_monitor_t {

@@ -7,8 +7,7 @@
 #include <GLFW/glfw3.h>
 
 typedef struct seleya_window_t seleya_window_t;
-
-#include "seleya/monitor.h"
+typedef struct seleya_monitor_t seleya_monitor_t;
 
 #define SELEYA_ENGINE_NAME "libseleya"
 
