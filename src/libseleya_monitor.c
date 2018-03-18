@@ -9,6 +9,21 @@
 #include "seleya/seleya.h"
 #include "seleya/monitor.h"
 
+void seleya_monitor_destroy(seleya_monitor_t *m)
+{
+  seleya_monitor_mode_t *mm = NULL;
+
+  while(m->modes)
+  {
+    mm = m->modes;
+    m->modes = m->modes->next;
+
+    free(mm);
+  }
+
+  free(m);
+}
+
 seleya_monitor_t *seleya_monitor_new(GLFWmonitor *m)
 {
   seleya_monitor_t *monitor = NULL;

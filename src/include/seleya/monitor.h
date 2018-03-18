@@ -25,6 +25,7 @@ struct seleya_monitor_mode_t {
   seleya_monitor_mode_t *next;
 };
 
+void seleya_monitor_destroy(seleya_monitor_t *m);
 seleya_monitor_t *seleya_monitor_new(GLFWmonitor *m);
 seleya_monitor_mode_t *seleya_monitor_mode_new(GLFWmonitor *m, const GLFWvidmode *vm);
 

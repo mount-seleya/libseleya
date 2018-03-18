@@ -11,5 +11,6 @@
 
 seleya_monitor_t *seleya_init(void);
 void seleya_loop(seleya_window_t *w);
+void seleya_terminate(seleya_monitor_t *m);
 
 #endif

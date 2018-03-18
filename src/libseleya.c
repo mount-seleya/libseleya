@@ -38,3 +38,18 @@ void seleya_loop(seleya_window_t *w)
     glfwPollEvents();
   }
 }
+
+void seleya_terminate(seleya_monitor_t *m)
+{
+  seleya_monitor_t *m_save = NULL;
+
+  while(m)
+  {
+    m_save = m;
+    m = m->next;
+
+    seleya_monitor_destroy(m_save);
+  }
+
+  glfwTerminate();
+}
