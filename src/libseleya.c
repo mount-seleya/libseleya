@@ -8,12 +8,6 @@
 #include "seleya/seleya.h"
 #include "seleya/monitor.h"
 
-GLFWwindow *seleya_create_window(int w, int h, char *title)
-{
-  glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-  return glfwCreateWindow(w, h, title, NULL, NULL);
-}
-
 seleya_monitor_t *seleya_init(void)
 {
   GLFWmonitor **m;

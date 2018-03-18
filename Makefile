@@ -5,8 +5,9 @@ all: libseleya.so seleya
 libseleya.so:
 	${CC} -c -fPIC ./src/libseleya.c -I./src/include ${LDFLAGS_libseleya}
 	${CC} -c -fPIC ./src/libseleya_monitor.c -I./src/include ${LDFLAGS_libseleya}
+	${CC} -c -fPIC ./src/libseleya_window.c -I./src/include ${LDFLAGS_libseleya}
 	${CC} -shared -fPIC -Wl,-soname,libseleya.so \
-		-o libseleya.so ./libseleya.o ./libseleya_monitor.o -lc \
+		-o libseleya.so ./libseleya.o ./libseleya_monitor.o ./libseleya_window.o -lc \
 		${LDFLAGS_libseleya}
 
 seleya: libseleya.so
